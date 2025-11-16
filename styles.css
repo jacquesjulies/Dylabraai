@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Roboto:wght@400;500&family=Sedgwick+Ave+Display&display=swap");
+
+:root {
+  --primary-color: #ce3a00;
+  --primary-color-dark: #be7c00;
+  --text-light: #f3f4f6;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  position: relative;
+  padding: 0 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+nav {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+nav ul {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--primary-color-dark);
+}
+
+.content {
+  text-align: center;
+  color: var(--text-light);
+}
+
+.content h1 {
+  font-family: "Sedgwick Ave Display", cursive;
+  font-size: 7rem;
+}
+
+.content h1 span {
+  font-size: 5rem;
+}
+
+.content p {
+  font-family: "Alkatra", cursive;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.content .promo {
+  padding: 0.5rem;
+  width: 300px;
+  margin: auto;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-family: "Alkatra", cursive;
+  background-color: var(--primary-color);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.content .promo:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .bg__video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .bg__video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+
+/* 🔥 NEW: Hamburger Menu + Mobile Navigation */
+.hamburger {
+display: none;
+flex-direction: column;
+cursor: pointer;
+gap: 5px;
+}
+.hamburger span {
+width: 28px;
+height: 3px;
+background: var(--text-light);
+border-radius: 4px;
+transition: 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translateY(8px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translateY(-8px); }
+
+
+@media (max-width: 900px) {
+nav ul { position: absolute; top: 100%; right: 0; background: rgba(0,0,0,0.8); flex-direction: column; width: 200px; padding: 1rem; gap: 1.5rem; transform: translateX(110%); transition: 0.4s; }
+nav ul.active { transform: translateX(0); }
+.hamburger { display: flex; }
+}
+
+
+/* 🔥 NEW: Product Card Section (Dark Fire Theme) */
+.product-card {
+width: 100%;
+padding: 5rem 2rem;
+background: radial-gradient(circle at center, #8a4900 0%, #2b1717 100%);
+display: flex;
+justify-content: center;
+}
+.card {
+display: flex;
+max-width: 1050px;
+width: 100%;
+gap: 28px;
+padding: 20px;
+align-items: center;
+background: rgba(255, 253, 253, 0.05);
+border-radius: 16px;
+backdrop-filter: blur(6px);
+border: 1px solid rgba(255, 0, 0, 0.08);
+transition: 0.3s;
+}
+.card:hover { transform: translateY(-6px); }
+
+
+.media img {
+width: 100%; height: 100%; object-fit: cover;
+border-radius: 12px;
+}
+
+
+.info h2 {
+color: #ffffff;
+font-family: "Alkatra", cursive;
+}
+
+
+.footer {
+  width: 100%;
+  background-color: rgba(219, 0, 0, 0.85);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem 0.5rem;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+.footer p {
+  margin: 0.2rem 0;
+  opacity: 0.9;
+}
+
+.footer p:hover {
+  opacity: 1;
+  color: var(--primary-color);
+}
+
+.footer-whatsapp {
+  margin-top: 0.6rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-whatsapp a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-whatsapp a img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-whatsapp a:hover {
+  color: var(--primary-color);
+}
+p{
+  color:rgb(255, 255, 255);
+}
+
+.badge{
+  color:#ffffff;
+}
+
+@media (min-width: 1400px) {
+  .content h1 {
+    font-size: 4rem;
+  }
+  .product-card {
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+
+/* 💻 Laptops & Desktops */
+@media (min-width: 1025px) and (max-width: 1399px) {
+  .product-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .card {
+    width: 48%;
+  }
+}
+
+/* 📲 Tablets & Large Phones (Landscape) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .content h1 {
+    font-size: 2.5rem;
+  }
+  .product-card {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .card {
+    width: 48%;
+  }
+}
+
+/* 📱 Smartphones – Most common sizes */
+@media (max-width: 767px) {
+  .content h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .content p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  .promo {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .product-card {
+    display: block;
+    padding: 10px;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+  .footer-whatsapp {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .wa-link {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* 🔸 Ultra Small Phones (Some older Samsung & iPhone SE) */
+@media (max-width: 420px) {
+  .logo {
+    font-size: 0.8rem;
+  }
+  .content h1 {
+    font-size: 1.4rem;
+  }
+  .content p {
+    font-size: 0.9rem;
+  }
+  .promo {
+    font-size: 0.9rem;
+  }
+}
+/* Default — Desktop */
+.content h1 {
+  font-size: 4rem;
+}
+.content h1 span {
+  font-size: 3.2rem;
+}
+.content p {
+  font-size: 1.4rem;
+}
+
+/* Medium screens — Tablets */
+@media (max-width: 1024px) {
+  .content h1 {
+    font-size: 3rem;
+  }
+  .content h1 span {
+    font-size: 2.4rem;
+  }
+  .content p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 767px) {
+  .content h1 {
+    font-size: 2.2rem;
+    line-height: 2.5rem;
+  }
+  .content h1 span {
+    font-size: 1.8rem;
+  }
+  .content p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+  .content h1 {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+  .content h1 span {
+    font-size: 1.4rem;
+  }
+  .content p {
+    font-size: 0.9rem;
+  }
+}
